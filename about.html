@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - University Quiz Hub</title>
+  <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.css">
+  <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+  <style>
+    body {
+      /* background-color: #121212; */
+  background: radial-gradient(125% 125% at 50% 100%, #000000 40%, #2b0707 100%);
+
+      color: #fff;
+      font-family: Garamond;
+    }
+    
+    .about-section {
+      color: white;
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+   .container i{
+      color: burlywood;
+    }
+    .about-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+    .team-section {
+      padding: 40px 20px;
+    }
+    .team-card {
+      background-color: burlywood;
+      border: 2px solid black;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #2b0707;
+      margin-bottom: 15px;
+    }
+    footer {
+      background-color: #1f1f1f;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+    
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(to right, #667eea, #764ba2); */
+  background-color: rgba(0, 0, 0, 0.553);
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid white;
+}
+footer {
+  padding: 20px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  bottom: 0;
+  border-top: 1px solid white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: transparent;
+  background: linear-gradient(90deg, white, burlywood, brown,burlywood,white,brown,white,burlywood);
+  /* animation: colorc 3s infinite; */
+  background-size: 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slide 8s linear infinite;
+}
+@keyframes slide{
+  0%{
+    background-position: 100% ;
+  }
+  100%{
+    background-position: 0% ;
+  }
+}
+/* @keyframes colorc{
+  0%, 100%{
+color: white;
+  }
+  50%{
+    color: burlywood;
+  } */
+
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar nav a:hover {
+  color: burlywood;
+}
+
+.navbar nav a:active {
+  color: yellow;
+}
+
+
+.right-nav .a {
+  margin-left: 1em;
+  padding: 0.4em 1em;
+  border: none;
+}
+
+.right-nav a i{
+  color: white;
+  font-size: 30px;
+}
+.right-nav a i:hover{
+  color: burlywood;
+}
+
+
+.a i {
+  color: white;
+}
+
+
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 5px 40px 5px 15px;
+  border: 1px solid #667eea;
+  border-radius: 10px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+.search-box i:hover{
+  color: black;
+}
+  </style>
+</head>
+<body>
+ <header>
+      <div class="navbar">
+        <div class="logo"><i class="fas fa-graduation-cap"></i>UniQuiz</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="courses.html">Start Quiz</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+            <li>
+              <div class="search-box">
+                <input type="text" placeholder="Search courses, topics ....." />
+                <i class="fas fa-search"></i>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="right-nav">
+          <a href="dashboard.html"><i class="fa-regular fa-circle-user"></i></a>
+        </div>
+      </div>
+    </header>
+   
+ 
+  <!-- About Section -->
+  <section class="about-section text-center">
+    <div class="container">
+      <h1><i class="fas fa-info-circle"></i> About Us</h1>
+      <p>
+        Welcome to <strong>UniQuiz</strong> – your interactive platform for mastering university courses.
+        Our mission is to provide students with engaging, timed, and challenging quizzes across multiple
+        disciplines like Physiology, Anatomy, Law, Mechanical Engineering, and more.
+      </p>
+      <p>
+        With real-time feedback, performance tracking, and a clean interface, UniQuiz makes learning
+        efficient and fun. Whether you’re preparing for exams or just expanding your knowledge,
+        we’ve got you covered.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section text-center">
+    <div class="container">
+      <h2 class="mb-4"><i class="fas fa-users"></i> Meet Our Team</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="images/quiz1.jpg" alt="Team Member">
+            <h5>David Praise</h5>
+            <p>Lead Developer</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="images/quiz2.jpg" alt="Team Member">
+            <h5>Jane Smith</h5>
+            <p>UI/UX Designer</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="images/quiz1.jpg" alt="Team Member">
+            <h5>Michael Johnson</h5>
+            <p>Content Creator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+      <div class="about">
+        <p>
+          <i class="fa-regular fa-copyright"> </i> 2025 UniQuiz. All rights
+          reserved.
+        </p>
+        Designed for university students to practice and prepare for exams.
+      </div>
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="courses.html">Start Quiz</a></li>
+          <li><a href="dashboard.html">dashboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/"
+              >Facebook <i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.X.com/"
+              >Twitter <i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/"
+              >Instagram <i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/"
+              >YouTube <i class="fab fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

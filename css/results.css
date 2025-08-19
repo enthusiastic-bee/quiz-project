@@ -1,0 +1,156 @@
+
+    body{
+      margin: 0;
+    }
+    #score-text{
+      color: white;
+    }
+    .main{
+       position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+    .result-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      position: relative;
+      margin-top: 60px;
+    }
+    .result-item {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #f9f9f9;
+    }
+    .correct { color: green; }
+    .wrong { color: red; }
+    .question { font-weight: bold; margin-bottom: 0.5rem; }
+    .answer, .explanation { margin-top: 0.5rem; }
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(to right, #667eea, #764ba2); */
+  background-color: rgba(0, 0, 0, 0.553);
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid white;
+}
+.result-container h1{
+color: white;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: transparent;
+  background: linear-gradient(90deg, white, burlywood, brown,burlywood,white,brown,white,burlywood);
+  /* animation: colorc 3s infinite; */
+  background-size: 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slide 8s linear infinite;
+}
+@keyframes slide{
+  0%{
+    background-position: 100% ;
+  }
+  100%{
+    background-position: 0% ;
+  }
+}
+/* @keyframes colorc{
+  0%, 100%{
+color: white;
+  }
+  50%{
+    color: burlywood;
+  } */
+
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar nav a:hover {
+  color: burlywood;
+}
+
+.navbar nav a:active {
+  color: yellow;
+}
+
+
+.right-nav .a {
+  margin-left: 1em;
+  padding: 0.4em 1em;
+  border: none;
+}
+
+.right-nav a i{
+  color: white;
+  font-size: 30px;
+}
+.right-nav a i:hover{
+  color: burlywood;
+}
+
+
+.a i {
+  color: white;
+}
+
+
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 5px 40px 5px 15px;
+  border: 1px solid #667eea;
+  border-radius: 4px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+.search-box i:hover{
+  color: black;
+}
+.fixed{
+   background: radial-gradient(125% 125% at 50% 100%, #000000 40%, #2b0707 100%);
+       
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 270vh;
+  width: 100%;
+  position: absolute;
+}
+

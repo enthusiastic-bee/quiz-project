@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniQuiz</title>
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo"><i class="fas fa-graduation-cap"></i>UniQuiz</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="courses.html">Start Quiz</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+            <li>
+              <div class="search-box">
+                <input type="text" placeholder="Search courses, topics ....." />
+                <i class="fas fa-search"></i>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="right-nav">
+          <a href="dashboard.html"><i class="fa-regular fa-circle-user"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="fixed"></div>
+      <!-- <img src="images/quiz1.jpg" alt="" /> -->
+      <div class="hero-content">
+        <h1 id="h11">
+          <b><i class="fas fa-graduation-cap"></i>Welcome to UniQuiz </b>
+        </h1>
+        <p id="h12"></p>
+
+        <button onclick="window.location.href='courses.html';" id="btn">
+          Start Quiz
+        </button>
+      </div>
+    </section>
+    <!-- <footer>
+      <p><i class="fa-regular fa-copyright"> </i> 2025 UniQuiz. All rights reserved.</p>
+      Designed for university students to practice and prepare for exams.
+    </footer> -->
+    <footer>
+      <div class="about">
+        <p>
+          <i class="fa-regular fa-copyright"> </i> 2025 UniQuiz. All rights
+          reserved.
+        </p>
+        Designed for university students to practice and prepare for exams.
+      </div>
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="courses.html">Start Quiz</a></li>
+          <li><a href="dashboard.html">dashboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/"
+              >Facebook <i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.X.com/"
+              >Twitter <i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/"
+              >Instagram <i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/"
+              >YouTube <i class="fab fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    function typeText(elementId, text, speed = 20, callback) {
+      const el = document.getElementById(elementId);
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          el.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+
+      type();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      let line1Done = false;
+      let line2Done = false;
+
+      const checkAndShowButton = () => {
+        if (line1Done && line2Done) {
+          document.getElementById("btn").classList.add("show");
+        }
+      };
+
+      typeText("h11", "", 80, () => {
+        line1Done = true;
+        checkAndShowButton();
+      });
+
+      typeText(
+        "h12",
+        " Test your knowledge across key university courses like Physiology, Anatomy, Biochemistry, Pharmacology, Engineering and many more.",
+        50,
+        () => {
+          line2Done = true;
+          checkAndShowButton();
+        }
+      );
+    });
+  </script>
+</html>

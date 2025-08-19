@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physiology Quiz Results</title>
+  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css"/>
+  <style>
+    body {
+      font-family: Garamond;
+  background: radial-gradient(125% 125% at 50% 100%, #000000 40%, #2b0707 100%);
+      
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-top: 60px;
+    }
+
+    .result-item {
+      background-color: burlywood;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .answer {
+      margin: 0.3rem 0;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .explanation {
+      margin-top: 0.5rem;
+      background: #f9f9f9;
+      padding: 0.6rem;
+      border-left: 4px solid #2b0707;
+      border-radius: 5px;
+    }
+
+    #score-text {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(to right, #667eea, #764ba2); */
+  background-color: rgba(0, 0, 0, 0.553);
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: transparent;
+  background: linear-gradient(90deg, white, burlywood, brown,burlywood,white,brown,white,burlywood);
+  /* animation: colorc 3s infinite; */
+  background-size: 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slide 8s linear infinite;
+}
+@keyframes slide{
+  0%{
+    background-position: 100% ;
+  }
+  100%{
+    background-position: 0% ;
+  }
+}
+/* @keyframes colorc{
+  0%, 100%{
+color: white;
+  }
+  50%{
+    color: burlywood;
+  } */
+footer {
+  padding: 20px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  bottom: 0;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 50px;
+
+}
+footer a{
+  text-decoration: none;
+  color: white;
+}
+footer a:hover{
+color: gray;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar nav a:hover {
+  color: burlywood;
+}
+
+.navbar nav a:active {
+  color: yellow;
+}
+
+
+.right-nav .a {
+  margin-left: 1em;
+  padding: 0.4em 1em;
+  border: none;
+}
+
+.right-nav  i{
+  color: white;
+  font-size: 30px;
+}
+.right-nav i:hover{
+  color: burlywood;
+}
+
+
+.a i {
+  color: white;
+}
+
+
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 5px 40px 5px 15px;
+  border: 1px solid #667eea;
+  border-radius: 4px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+.search-box i:hover{
+  color: black;
+}
+  </style>
+</head>
+<body>
+  <header>
+      
+      <div class="navbar">
+        <div class="logo"><i class="fas fa-graduation-cap"></i>UniQuiz</div>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+        <li>
+            <a href="../courses.html">Start Quiz</a>
+        </li>
+        <li>
+            <a href="../about.html">About Us</a>
+        </li>
+            <li>
+              <div class="search-box">
+                <input
+                  type="text"
+                  placeholder="Search courses, topics ....."
+                />
+                <i class="fas fa-search"></i>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="right-nav">
+          <i class="fa-regular fa-circle-user" onclick="window.location.href = '../dashboard.html';"></i>
+        </div>
+      </div>
+    </header>
+ 
+  <h1><i class="fas fa-heartbeat"></i> Anatomy Quiz Results</h1>
+  <div id="score-text"></div>
+  <div id="results-list"></div>
+ <footer>
+      <div class="about">
+        <p>
+          <i class="fa-regular fa-copyright"> </i> 2025 UniQuiz. All rights
+          reserved.
+        </p>
+        Designed for university students to practice and prepare for exams.
+      </div>
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="courses.html">Start Quiz</a></li>
+          <li><a href="dashboard.html">dashboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/"
+              >Facebook <i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.X.com/"
+              >Twitter <i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/"
+              >Instagram <i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/"
+              >YouTube <i class="fab fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  <script>
+    const results = JSON.parse(localStorage.getItem("anatomyDetailed"));
+    const score = localStorage.getItem("anatomyScore");
+    const scoreText = document.getElementById("score-text");
+    const resultsList = document.getElementById("results-list");
+
+    if (results && score !== null) {
+      scoreText.innerHTML = `<strong>Score:</strong> ${score} / ${results.length}`;
+
+      results.forEach((item, index) => {
+        const isCorrect = item.selected === item.correct;
+        const icon = isCorrect
+          ? '<i class="fas fa-check-circle correct"></i>'
+          : '<i class="fas fa-times-circle wrong"></i>';
+
+        const div = document.createElement("div");
+        div.classList.add("result-item");
+
+        div.innerHTML = `
+          <div class="question">${index + 1}. ${item.question} ${icon}</div>
+          <div class="answer"><strong>Your answer:</strong> <span class="${isCorrect ? 'correct' : 'wrong'}">${item.selected}</span></div>
+          ${!isCorrect ? `<div class="answer"><strong>Correct answer:</strong> <span class="correct">${item.correct}</span></div>` : ''}
+          <div class="explanation"><i class="fas fa-lightbulb"></i> <strong>Explanation:</strong> ${item.explanation}</div>
+        `;
+
+        resultsList.appendChild(div);
+      });
+    } else {
+      scoreText.innerHTML = "No results found for Medical Biology.";
+    }
+  </script>
+</body>
+</html>
